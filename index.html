@@ -1,11 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Stopwatch</title>
-</head>
-<body>
-    
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Stopwatch | by Flux</title>
+
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+  </head>
+  <body>
+    <div id="main-container">
+      <h1>Web App Stopwatch</h1>
+      <div id="head">HH:MM:SS.sss</div>
+      <div id="stopwatch">00:00:00.000</div>
+      <div id="controls">
+        <button id="startStop" onclick="startStop()">Start</button>
+        <button id="lapReset" onclick="lapReset()" disabled>Lap</button>
+      </div>
+      <div id="laps">
+        <div id="lapList"></div>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
 </html>
