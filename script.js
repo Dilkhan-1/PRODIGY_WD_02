@@ -10,11 +10,11 @@ startStopButton.style.backgroundColor = "green";
 function startStop() {
   
   const lapResetButton = document.getElementById("lapReset");
-  
+
   if (isRunning) {
     clearInterval(interval);
     startStopButton.textContent = "Continue";
-    startStopButton.style.backgroundColor = "green";
+    startStopButton.style.backgroundColor = "blue";
     lapResetButton.textContent = "Reset";
     lapResetButton.disabled = false;
   } 
@@ -54,6 +54,7 @@ function lapReset() {
   } else {
     clearInterval(interval);
     startStopButton.textContent = "Start";
+    startStopButton.style.backgroundColor = "green";
     lapResetButton.textContent = "Reset";
     lapResetButton.disabled = true;
     displayTime(0);
