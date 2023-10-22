@@ -9,12 +9,13 @@
     <link rel="stylesheet" type="text/css" href="styles.css" />
 
     <!-- Icon  -->
-    <link rel="icon" type="image/x-icon" href="./assets/time.ico">
+    <link rel="icon" type="image/x-icon" href="./assets/time.ico" />
   </head>
+
   <body>
+    
+    <h1 id="name">Stopwatch</h1>
     <div id="main-container">
-      <h1>Stopwatch</h1>
-      <div id="head">HH:MM:SS.sss</div>
       <div id="stopwatch">00:00:00.000</div>
       <div id="controls">
         <button id="startStop" onclick="startStop()">Start</button>
@@ -23,15 +24,22 @@
       <div id="laps">
         <div id="lapList"></div>
       </div>
+    </div>
+
+    <!-- Footer  -->
+    <footer>
       <p class="dev-para">
         © 2023 StopWatch by
-        <b 
-          ><a href="https://www.linkedin.com/in/kashiekzmi/" target="_blank"
+        <b
+          ><a
+            href="https://www.linkedin.com/in/dilnawazkhan-designs/"
+            target="_blank"
             >FluX</a
           ></b
         >
       </p>
-    </div>
+    </footer>
+
     <script src="script.js"></script>
   </body>
 </html>

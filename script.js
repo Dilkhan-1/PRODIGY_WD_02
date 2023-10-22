@@ -13,7 +13,7 @@ function startStop() {
   
   if (isRunning) {
     clearInterval(interval);
-    startStopButton.textContent = "Start";
+    startStopButton.textContent = "Continue";
     startStopButton.style.backgroundColor = "green";
     lapResetButton.textContent = "Reset";
     lapResetButton.disabled = false;
@@ -53,6 +53,7 @@ function lapReset() {
     displayLaps();
   } else {
     clearInterval(interval);
+    startStopButton.textContent = "Start";
     lapResetButton.textContent = "Reset";
     lapResetButton.disabled = true;
     displayTime(0);
@@ -71,6 +72,12 @@ function displayLaps() {
     lapDisplay.textContent = `Lap ${index + 1}: ${formatTime(lapTime)}`;
     lapListDiv.appendChild(lapDisplay);
   });
+
+  // Update the height of the main-container based on the number of lap elements
+  const mainContainer = document.getElementById("main-container");
+  const lapElementsCount = lapList.length;
+  const updatedHeight = 40 + lapElementsCount * 2; // Adjust this value as needed
+  mainContainer.style.height = `${updatedHeight}vh`;
 }
 
 function formatTime(time) {
