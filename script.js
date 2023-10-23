@@ -5,17 +5,19 @@ let startTime;
 let lapTime;
 let lapList = [];
 const startStopButton = document.getElementById("startStop");
+const lapResetButton = document.getElementById("lapReset");
+
+lapResetButton.style.backgroundColor = "#f1c40f"
 startStopButton.style.backgroundColor = "green";
 
 function startStop() {
-  
-  const lapResetButton = document.getElementById("lapReset");
 
   if (isRunning) {
     clearInterval(interval);
     startStopButton.textContent = "Continue";
     startStopButton.style.backgroundColor = "blue";
     lapResetButton.textContent = "Reset";
+    lapResetButton.backgroundColor = "Gray";
     lapResetButton.disabled = false;
   } 
   else {
@@ -55,7 +57,7 @@ function lapReset() {
     clearInterval(interval);
     startStopButton.textContent = "Start";
     startStopButton.style.backgroundColor = "green";
-    lapResetButton.textContent = "Reset";
+    lapResetButton.textContent = "Lap";
     lapResetButton.disabled = true;
     displayTime(0);
     lapCount = 1;
