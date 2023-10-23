@@ -7,25 +7,24 @@ let lapList = [];
 const startStopButton = document.getElementById("startStop");
 const lapResetButton = document.getElementById("lapReset");
 
-lapResetButton.style.backgroundColor = "#f1c40f"
+lapResetButton.style.backgroundColor = "#f1c40f";
 startStopButton.style.backgroundColor = "green";
 
 function startStop() {
-
   if (isRunning) {
     clearInterval(interval);
     startStopButton.textContent = "Continue";
     startStopButton.style.backgroundColor = "blue";
     lapResetButton.textContent = "Reset";
-    lapResetButton.backgroundColor = "Gray";
+    lapResetButton.style.backgroundColor = "#ced4da";
     lapResetButton.disabled = false;
-  } 
-  else {
+  } else {
     startTime = Date.now() - (lapTime || 0);
     interval = setInterval(updateStopwatch, 10);
     startStopButton.textContent = "Stop";
     startStopButton.style.backgroundColor = "red";
     lapResetButton.textContent = "Lap";
+    lapResetButton.style.backgroundColor = "#f1c40f";
     lapResetButton.disabled = false;
   }
 
@@ -44,7 +43,9 @@ function displayTime(time) {
   const seconds = String(Math.floor((time % 60000) / 1000)).padStart(2, "0");
   const milliseconds = String(Math.floor(time % 1000)).padStart(3, "0");
 
-  document.getElementById("stopwatch").textContent = `${hours}:${minutes}:${seconds}.${milliseconds}`;
+  document.getElementById(
+    "stopwatch"
+  ).textContent = `${hours}:${minutes}:${seconds}.${milliseconds}`;
 }
 
 function lapReset() {
@@ -58,6 +59,7 @@ function lapReset() {
     startStopButton.textContent = "Start";
     startStopButton.style.backgroundColor = "green";
     lapResetButton.textContent = "Lap";
+    lapResetButton.style.backgroundColor = "#f1c40f";
     lapResetButton.disabled = true;
     displayTime(0);
     lapCount = 1;
@@ -76,10 +78,10 @@ function displayLaps() {
     lapListDiv.appendChild(lapDisplay);
   });
 
-  // Update the height of the main-container based on the number of lap elements
+  // Height of the main-container based on the number of lap elements
   const mainContainer = document.getElementById("main-container");
   const lapElementsCount = lapList.length;
-  const updatedHeight = 40 + lapElementsCount * 2; // Adjust this value as needed
+  const updatedHeight = 40 + lapElementsCount * 2;
   mainContainer.style.height = `${updatedHeight}vh`;
 }
 
