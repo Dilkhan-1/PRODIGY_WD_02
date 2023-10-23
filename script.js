@@ -4,11 +4,65 @@ let interval;
 let startTime;
 let lapTime;
 let lapList = [];
+
 const startStopButton = document.getElementById("startStop");
 const lapResetButton = document.getElementById("lapReset");
 
+// Initial button styles
 lapResetButton.style.backgroundColor = "#f1c40f";
 startStopButton.style.backgroundColor = "green";
+
+// Add hover effect for Start/Stop button
+// Hover Over
+startStopButton.addEventListener("mouseover", function () {
+  if (isRunning){
+    startStopButton.style.backgroundColor = "#dc3545"; // shade of Red
+  } 
+  else{
+    if(startStopButton.textContent === "Continue"){
+      startStopButton.style.backgroundColor = "#007bff"; // shade of Blue
+    }
+    else {
+      startStopButton.style.backgroundColor = "#28a745"; // shade of Green
+    }
+  }
+});
+
+// Hover Out
+startStopButton.addEventListener("mouseout", function () {
+  if (isRunning){
+    startStopButton.style.backgroundColor = "red"; // Red
+  }
+  else{
+    if(startStopButton.textContent === "Continue"){
+      startStopButton.style.backgroundColor = "blue"; // Blue
+    }
+    else {
+      startStopButton.style.backgroundColor = "green"; // Green
+    }
+  }
+});
+
+// Add hover effect for Lap/Reset button
+// Hover Over
+lapResetButton.addEventListener("mouseover", function () {
+  if (lapResetButton.textContent === "Lap") {
+    lapResetButton.style.backgroundColor = "#f7dc6f"; // Yellow
+  }
+  else {
+    lapResetButton.style.backgroundColor = "#e9ecef"; // shade of Gray
+  }
+});
+
+// Hover Out
+lapResetButton.addEventListener("mouseout", function () {
+  if (lapResetButton.textContent === "Lap") {
+    lapResetButton.style.backgroundColor = "#f1c40f"; // Yellow
+  }
+  else {
+    lapResetButton.style.backgroundColor = "#ced4da"; // Gray
+  }
+});
 
 function startStop() {
   if (isRunning) {
