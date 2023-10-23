@@ -10,7 +10,7 @@ A lightweight and user-friendly web-based StopWatch application with features fo
 
 ## Table of Contents
 
-- [Live Demo](#demo)
+- [Demo](#demo)
 - [Features](#features)
 - [Technologies Used](#technologies-used)
 - [Getting Started](#getting-started)
@@ -77,3 +77,5 @@ Contributions are welcome! If you have ideas for improvements or new features, f
 4. Make your changes and commit them.
 5. Push your changes to your forked repository.
 6. Create a pull request with your enhancements and with a clear description of your changes.
+
+---
