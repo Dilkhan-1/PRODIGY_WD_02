@@ -97,9 +97,7 @@ function displayTime(time) {
   const seconds = String(Math.floor((time % 60000) / 1000)).padStart(2, "0");
   const milliseconds = String(Math.floor(time % 1000)).padStart(3, "0");
 
-  document.getElementById(
-    "stopwatch"
-  ).textContent = `${hours}:${minutes}:${seconds}.${milliseconds}`;
+  document.getElementById("stopwatch").textContent = `${hours}:${minutes}:${seconds}.${milliseconds}`;
 }
 
 function lapReset() {

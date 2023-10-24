@@ -12,7 +12,6 @@ body {
 
 body::after {
     content: "";
-
     background-image: url(./assets/jon.jpg);
     background-repeat: no-repeat;
     background-position: center;
@@ -61,7 +60,6 @@ a{
 
 a:hover{
     color: #888888;
-    
 }
 
 #controls {
